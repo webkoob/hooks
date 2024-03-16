@@ -15,6 +15,26 @@ function App() {
   })
   //use ====> useAxios Hooks
 
+  // use ====> useAxiosSAH Hooks // set auto headers
+    const [responseSAH,errorSAH,loadingSAH] = useAxios({
+      method: 'POST', // GET PULL DELETE
+      url: 'Add Your link', // '/user/login/'
+      data: {
+        // send body
+      }
+    } , true) // true = set auto headers | false or null or '' = dont sending headers automatically
+  //use ====> useAxiosSAH Hooks // set auto headers
+
+    // use ====> useAxiosSAB Hooks // set auto body
+    const [responseSAB,errorSAB,loadingSAB] = useAxios({
+      method: 'POST', // GET PULL DELETE
+      url: 'Add Your link', // '/user/login/'
+      headers: {
+        // send headers
+      }
+    } , true) // true = set auto body | false or null or '' = dont sending body automatically
+  //use ====> useAxiosSAB Hooks // set auto body
+
   console.log('response : ' + response , 'error : ' + error , 'loading : ' + loading)
   return (
     <>
